@@ -115,22 +115,23 @@ class redisCacheManagement():
 
             # Add this in the start of your code
             
-            # user_idd = data['user_id']
-            # fp_log_idd = data['fp_log_id']
-            # NOTE-- getting data from Redis cache--    
+            # user_id = data['user_id']
+            # fp_log_id = data['fp_log_id']
+            # NOTE-- getting data from Redis cache--  
+              
             # rp_user_id = data['user_id']
-            # rpinoutflow_redis_geturl = reverse('getredisdata')
-            # rpinoutflow_redis_geturl_postdata = {"key":"getrpinoutflow"+"_"+str(rp_user_id)}
-            # rpinoutflow_redis_getapicall = requests.post(urls.BASE_URL[:-1]+rpinoutflow_redis_geturl, data=json.dumps(rpinoutflow_redis_geturl_postdata))
-            # rpinoutflow_redis_get_data = rpinoutflow_redis_getapicall.json()
+            # redis_geturl = reverse('getredisdata')
+            # redis_geturl_postdata = {"key":"your_key_name"+"_"+str(rp_user_id)}
+            # redis_getapicall = requests.post(urls.BASE_URL[:-1]+redis_geturl, data=json.dumps(redis_geturl_postdata))
+            # redis_get_data = redis_getapicall.json()
 
             # response ={}
-            # if "error_code" in rpinoutflow_redis_get_data:
-            # 	if rpinoutflow_redis_get_data['error_code'] == '100':
-            # 		response = rpinoutflow_redis_get_data
+            # if "error_code" in redis_get_data:
+            # 	if redis_get_data['error_code'] == '100':
+            # 		response = redis_get_data
             # else:
-            # 	rpinoutflow_redis_get_data = commonfunc.decrypt(rpinoutflow_redis_get_data)
-            # 	response = json.loads(rpinoutflow_redis_get_data)
+            # 	redis_get_data = commonfunc.decrypt(redis_get_data)
+            # 	response = json.loads(redis_get_data)
             # 	if response['error_code'] == '100':
             # 		response = response
             # if response:
@@ -144,10 +145,10 @@ class redisCacheManagement():
 
             # Add this at the end of your code  
             
-            # rpinoutflow_setredis_url = reverse('setredisdata')						
-            # rpinoutflow_setredis_posteddata = {"key":"getrpinoutflow"+"_"+str(rp_user_id),"value":response}
-            # rpinoutflow_setredis_api_call = requests.post(urls.BASE_URL[:-1]+rpinoutflow_setredis_url, data=json.dumps(rpinoutflow_setredis_posteddata,default=str))
-            # rpinoutflow_setredis_data = rpinoutflow_setredis_api_call.json()   
+            # set_redis_url = reverse('setredisdata')						
+            # set_redis_posteddata = {"key":"your_key_name"+"_"+str(rp_user_id),"value":response}
+            # set_redis_api_call = requests.post(urls.BASE_URL[:-1]+set_redis_url, data=json.dumps(set_redis_posteddata,default=str))
+            # set_redis_data = set_redis_api_call.json()   
             # if encrypt == 1:
             # 	response = commonfunc.encrypt(json.dumps(response,default=str))
             # return JsonResponse(response,safe=False)
